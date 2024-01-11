@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { server } from "../../App";
+// import { server } from "../../App";
 import { Context } from "../../main";
 import "../AddTask/AddTask.scss";
 
@@ -13,7 +13,7 @@ const AddTask = () => {
     e.preventDefault();
     axios
       .post(
-        server,
+        import.meta.env.VITE_SERVER,
         {
           newTask: Task,
         },

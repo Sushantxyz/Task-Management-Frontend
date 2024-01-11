@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "../Login/Login.scss";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { server } from "../../App";
+// import { server } from "../../App";
 import { Context } from "../../main";
 import Loader from "../../components/Loader";
 
@@ -23,7 +23,7 @@ const Login = () => {
 
   useEffect(() => {
     axios
-      .get(server + "getProfile", { withCredentials: true })
+      .get(import.meta.env.VITE_SERVER + "getProfile", { withCredentials: true })
       .then((response) => {
         response.data.success && setisAuthenticated(true);
         setreload(false);
@@ -38,7 +38,7 @@ const Login = () => {
     e.preventDefault();
     axios
       .post(
-        server + "login",
+        import.meta.env.VITE_SERVER + "login",
         {
           email: logindata.email,
           password: logindata.password,
@@ -60,7 +60,7 @@ const Login = () => {
   }
 
   if (reload) {
-    return <Loader/>;
+    return <Loader />;
   }
 
   return (

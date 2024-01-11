@@ -1,15 +1,14 @@
 import Header from "./components/Header/Header.jsx";
-import { useContext, useEffect } from "react";
-export const server = "http://localhost:3000/";
+import { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import Register from "./Pages/Register/Register.jsx";
 import { Context } from "./main.jsx";
+// export const server = "http://localhost:3000/";
 
 function App() {
-  const { isAuthenticated, setisAuthenticated, reload, setreload } =
-    useContext(Context);
+  const { isAuthenticated } = useContext(Context);
 
   return (
     <>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "../Register/Register.scss";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { server } from "../../App";
+// import { server } from "../../App";
 import { Context } from "../../main";
 
 const Register = () => {
@@ -31,7 +31,7 @@ const Register = () => {
     e.preventDefault();
     axios
       .post(
-        server + "register",
+        import.meta.env.VITE_SERVER + "register",
         {
           username: registerdata.username,
           email: registerdata.email,

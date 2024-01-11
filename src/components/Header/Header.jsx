@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext } from "react";
-import { server } from "../../App";
+// import { server } from "../../App";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
 import "../Header/Header.scss";
@@ -14,7 +14,7 @@ const Header = () => {
   function handleDelete() {
     navigate("/");
     axios
-      .post(server + "logout", {}, { withCredentials: true })
+      .post(import.meta.env.VITE_SERVER + "logout", {}, { withCredentials: true })
       .then((response) => {
         response.data.success && setisAuthenticated(false);
       });

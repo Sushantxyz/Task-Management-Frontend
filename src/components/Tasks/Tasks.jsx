@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import { server } from "../../App.jsx";
+// import { server } from "../../App.jsx";
 import axios from "axios";
 import Loader from "../Loader.jsx";
 import { Context } from "../../main.jsx";
@@ -14,7 +14,7 @@ const Tasks = () => {
 
   useEffect(() => {
     async function a() {
-      const response = await axios.get(server, { withCredentials: true });
+      const response = await axios.get(import.meta.env.VITE_SERVER, { withCredentials: true });
       settaskData(response.data.data[0].data);
     }
     a();
@@ -65,7 +65,7 @@ const Tasks = () => {
     settaskData(newdata);
 
     axios
-      .put(server, { data: newdata }, { withCredentials: true })
+      .put(import.meta.env.VITE_SERVER, { data: newdata }, { withCredentials: true })
       .then(() => console.log("Data Updated..."))
       .catch(() => console.log("Error while updating data..."));
   }
@@ -73,7 +73,7 @@ const Tasks = () => {
   function handleEdit(id) {
     axios
       .put(
-        server + `${id}`,
+        import.meta.env.VITE_SERVER + `${id}`,
         { updatedTask: TaskUpdate },
         { withCredentials: true }
       )
@@ -87,7 +87,7 @@ const Tasks = () => {
 
   function handleDelete(id) {
     axios
-      .delete(server + `${id}`, { withCredentials: true })
+      .delete(import.meta.env.VITE_SERVER + `${id}`, { withCredentials: true })
       .then(() => {
         console.log("Task Deleted...");
         setreload((prev) => !prev);
