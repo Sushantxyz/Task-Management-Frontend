@@ -19,7 +19,10 @@ const AddTask = () => {
         },
         { withCredentials: true }
       )
-      .then(() => setreload((prev) => !prev))
+      .then(() => {
+        setreload((prev) => !prev);
+        setTask("");
+      })
       .catch(() => console.log("Error while creating task"));
   }
 
