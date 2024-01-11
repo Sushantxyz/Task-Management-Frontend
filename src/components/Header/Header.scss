@@ -1,0 +1,13 @@
+.Header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(90deg, #424249, rgb(255, 255, 255));
+  button {
+    margin-left: auto;
+    margin-right: 10vmax;
+    padding: 0.5rem 0.8rem;
+    background-color: #2e2e36;
+    color: white;
+  }
+}

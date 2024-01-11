@@ -1,0 +1,86 @@
+.all-Task-Container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  > div {
+    width: calc((100vw - 2rem) / 3);
+    text-align: center;
+
+    > div {
+      padding-block: 1rem;
+      border: 2px solid rgb(7, 7, 7);
+      text-align: left;
+      min-height: 65vh;
+    }
+
+    h3 {
+      border-right: 2px solid black;
+      background: linear-gradient(90deg, #424249, rgb(255, 255, 255));
+      padding-block: 0.8rem;
+      color: white;
+    }
+  }
+}
+
+.taskBox {
+  display: flex;
+  padding: 0.2rem 0.4rem;
+  margin-bottom: 8px;
+  height: auto;
+  border-radius: 8px;
+  margin-inline: 0.5rem;
+  border: 2px solid black;
+  overflow: hidden;
+  > p {
+    padding-inline: 0.5rem;
+    width: 90%;
+    overflow-x: scroll;
+    scrollbar-color: transparent transparent; // For Firefox
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 8%;
+    :first-child {
+      background-color: crimson;
+    }
+    :nth-child(2) {
+      background-color: rgb(70, 209, 70);
+    }
+    button {
+      padding: 0.3rem;
+      margin-block: 0.1rem;
+      height: 2rem;
+      font-size: 1em;
+      font-weight: 500;
+    }
+  }
+}
+.editTask {
+  padding: 0.2rem 0.4rem;
+  margin-bottom: 8px;
+  height: auto;
+  border-radius: 8px;
+  margin-inline: 0.5rem;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  > input {
+    width: 75%;
+  }
+  > button {
+    width: 10%;
+    padding: 0.3rem;
+    margin-block: 0.1rem;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: rgb(70, 209, 70);
+  }
+}
